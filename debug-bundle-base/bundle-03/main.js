@@ -56,7 +56,7 @@ const cars = [
         manufacturer: 'Seat',
         model: 'Ibiza',
         type: 'metano'
-    }
+    },
     {
         manufacturer: 'Audi',
         model: 'R8',
@@ -64,14 +64,14 @@ const cars = [
     },
 ];
 
-const gasolineCars = cars.filter( (auto) >= auto.type === 'benzina');
+const gasolineCars = cars.filter( (auto) => auto.type.toUpperCase() === 'BENZINA');
 
 const dieselCars = cars.filter( (auto) => {
-    auto.type === 'diesel';
+    return auto.type.toUpperCase() === 'DIESEL';
 });
 
 const otherCars = cars.filter( (auto) => {
-    return auto.type !== 'benzina' || auto.type !== 'diesel';
+    return auto.type.toUpperCase() !== 'BENZINA' && auto.type.toUpperCase() !== 'DIESEL';
 });
 
 console.log('Auto a benzina');
@@ -84,3 +84,12 @@ console.log(dieselCars);
 
 console.log('Tutte le altre auto');
 console.log(otherCars);
+
+
+/*******************************************************************************
+ 
+    1- Controlla per ogni oggetto il type e li raggruppa grazie ad un filter in auto a benzina, a diesel o altro
+    2- Manca la virgola dopo il penultimo object dell'array
+    3- I type devono essere controllati in uppercase e per quanto riguarda l'ultimo array il return avviene solo se entrambe le condizioni avvengono quindi && e non or
+​
+*******************************************************************************/
