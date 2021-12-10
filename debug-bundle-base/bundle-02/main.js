@@ -12,20 +12,20 @@
 
 // ESERCIZIO 1
 // 1- La funzione controlla l'età myAge, in base ad essa message assume un valore differente, 'sei troppo giovane' se ha meno di 18 anni altrimenti 'hai più di 18 anni'
-// 2- Manca il this prima di message
+// 2- message è una variabile let
 // 3- Manca il return del messaggio 
 
 function checkAge() {
     const myAge = 32;
-    const message = '';
+    let message = '';
 
     if (myAge < 18) {
-        this.message = `Sei troppo giovane! Hai ${myAge} anni!`;
+        message = `Sei troppo giovane! Hai ${myAge} anni!`;
     }else{
-        this.message = 'Hai più di 18 anni!';
+        message = 'Hai più di 18 anni!';
     }
 
-    return this.message
+    return message
 }
 console.log(checkAge());
 
@@ -46,13 +46,13 @@ console.log(printColorsNumber());
 // 2- Se non aggiungiamo parseInst all'userNumber esso verrà letto come stringa non come numero
 // 3- Non ci sono errori logici
 
-// function addNumbers() {
-// const userNumber = prompt('Inserisci un numero');
-//     const total = parseInt(userNumber) + 12;
+function addNumbers() {
+const userNumber = prompt('Inserisci un numero');
+    const total = parseInt(userNumber) + 12;
 
-//     console.log(`Il risultato finale è ${total}`);
-// }
-// console.log(addNumbers());;
+    console.log(`Il risultato finale è ${total}`);
+}
+console.log(addNumbers());;
 
 
 // ESERCIZIO 4
@@ -60,28 +60,28 @@ console.log(printColorsNumber());
 // 2- Non ci sono errori di sintassi
 // 3- Nell'ultimo if essendo un booleano basta scrivere solo grantAccess che automaticamente significa che è vera
 
-// function checkAccess() {
-//     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
-//     const userEmail = prompt('Inserisci il tuo indirizzo email');
+function checkAccess() {
+    const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
+    const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-//     console.log(addresses);
-//     console.log(userEmail);
+    console.log(addresses);
+    console.log(userEmail);
 
-//     let grantAccess = 'false';
+    let grantAccess = false;
 
-//     if (addresses.includes(userEmail)) {
-//         grantAccess = 'true';
-//     }
+    if (addresses.includes(userEmail)) {
+        grantAccess = true;
+    }
 
-//     console.log(grantAccess);
+    console.log(grantAccess);
 
-//     if (grantAccess) {
-//         console.log('Accesso consentito!');
-//     } else {
-//         console.log('Accesso negato!');
-//     }
-// }
-// console.log(checkAccess());
+    if (grantAccess === true) {
+        console.log('Accesso consentito!');
+    } else {
+        console.log('Accesso negato!');
+    }
+}
+console.log(checkAccess());
 
 
 // ESERCIZIO 5 (suggerimento: c'è un solo errore)
@@ -102,14 +102,14 @@ function checkAccessImproved() {
       if (userEmail.length > 5) {
             
         if (email === userEmail) {
-        grantAccess = 'true';            
+        grantAccess = true;            
             
         }
         
         }
     }
 
-    if (grantAccess) {
+    if (grantAccess === true) {
         console.log('Accesso consentito!');
     } else {
         console.log('Accesso negato!');
